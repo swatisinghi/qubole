@@ -25,7 +25,7 @@ public class Utility {
     public long persistData(long fileId, String data) throws IOException {
         // TODO : remove absolute path
         String fileName = String.valueOf(fileId);
-        String filePath = "/Users/swatis/MyWork/qubole-java/".concat(fileName);
+        String filePath = fileName;
         File file = new File(filePath);
 
         //Try until a file is available for creation
@@ -48,14 +48,13 @@ public class Utility {
     }
 
     public String retrieveData(String fileName) throws FileNotFoundException {
-        fileName = "/Users/swatis/MyWork/qubole-java/".concat(fileName);
         String content = new Scanner(new File(fileName)).useDelimiter("\\Z").next();
 
         return content;
     }
 
     public void deleteData(String fileName) {
-        File file = new File("/Users/swatis/MyWork/qubole-java/".concat(fileName));
+        File file = new File(fileName);
         if(file.exists())
             file.delete();
     }
