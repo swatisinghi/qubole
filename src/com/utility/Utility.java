@@ -33,7 +33,7 @@ public class Utility {
             fileId++;
 
             fileName = String.valueOf(fileId);
-            filePath = "/Users/swatis/MyWork/qubole-java/".concat(fileName);
+            filePath = fileName;
             file = new File(filePath);
         }
 
